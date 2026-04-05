@@ -1,7 +1,8 @@
 import express ,{Request, Response} from "express";
 import fs from "fs";
+import cors from "cors";
 const app=express();
-
+app.use(cors());
 const data: string = fs.readFileSync("deals.csv", "utf-8");
 const rows: string[]= data.split("\n").slice(1);
 
